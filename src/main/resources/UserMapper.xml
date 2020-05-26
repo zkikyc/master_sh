@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sh.springbootdemo.dao.UserDao">
-    <select id="getXs0101ByXm" resultType="com.sh.springbootdemo.bean.Xs0101" parameterType="java.lang.String">
-        select a.xs0101id,a.xm,c.zymc,d.bj from xs0101 a left join xs0701 b on a.xs0101id = b.xs0101id left join jx01nd c on c.jx01ndid = b.jx01ndid left join xx04 d on d.xx04id
-          = b.bjbh where xm=#{xm}
-    </select>
-</mapper>

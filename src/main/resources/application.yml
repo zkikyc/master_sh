@@ -29,11 +29,11 @@ spring:
       shutdown-timeout: 100ms
 logging:
   level:
-    com.sh.springbootdemo.controller: debug
+    com.kikyc.utils: debug
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapping/*.xml
   config-locations: classpath:mybatis/mybatis-config.xml
-  type-aliases-package: com.sh.springbootdemo.bean
+  type-aliases-package: com.kikyc.utils.entity
 user:
   id: 01
   name: 张

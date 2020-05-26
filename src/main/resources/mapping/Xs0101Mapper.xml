@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kikyc.utils.dao.Xs0101Mapper">
+  <resultMap id="BaseResultMap" type="com.kikyc.utils.entity.Xs0101">
+    <id column="Xs0101ID" jdbcType="VARCHAR" property="xs0101id" />
+    <result column="XH" jdbcType="VARCHAR" property="xh" />
+    <result column="XM" jdbcType="VARCHAR" property="xm" />
+    <result column="XMPY" jdbcType="VARCHAR" property="xmpy" />
+    <result column="CYM" jdbcType="VARCHAR" property="cym" />
+    <result column="XBM" jdbcType="VARCHAR" property="xbm" />
+    <result column="CSRQ" jdbcType="VARCHAR" property="csrq" />
+    <result column="CSDM" jdbcType="VARCHAR" property="csdm" />
+    <result column="JG" jdbcType="VARCHAR" property="jg" />
+    <result column="MZM" jdbcType="VARCHAR" property="mzm" />
+    <result column="GJDQM" jdbcType="VARCHAR" property="gjdqm" />
+    <result column="SFZJLXM" jdbcType="VARCHAR" property="sfzjlxm" />
+    <result column="SFZJH" jdbcType="VARCHAR" property="sfzjh" />
+    <result column="SFZJYXQ" jdbcType="VARCHAR" property="sfzjyxq" />
+    <result column="HYZKM" jdbcType="VARCHAR" property="hyzkm" />
+    <result column="GATQWM" jdbcType="VARCHAR" property="gatqwm" />
+    <result column="ZZMMM" jdbcType="VARCHAR" property="zzmmm" />
+    <result column="JKZKM" jdbcType="VARCHAR" property="jkzkm" />
+    <result column="XYZJM" jdbcType="VARCHAR" property="xyzjm" />
+    <result column="XXM" jdbcType="VARCHAR" property="xxm" />
+    <result column="ZP" jdbcType="VARCHAR" property="zp" />
+    <result column="YHZH" jdbcType="VARCHAR" property="yhzh" />
+    <result column="TXDZ" jdbcType="VARCHAR" property="txdz" />
+    <result column="YZBM" jdbcType="VARCHAR" property="yzbm" />
+    <result column="DH" jdbcType="VARCHAR" property="dh" />
+    <result column="DZXX" jdbcType="VARCHAR" property="dzxx" />
+    <result column="ZYDZ" jdbcType="VARCHAR" property="zydz" />
+    <result column="JSTXH" jdbcType="VARCHAR" property="jstxh" />
+    <result column="BZ" jdbcType="VARCHAR" property="bz" />
+    <result column="CJR" jdbcType="VARCHAR" property="cjr" />
+    <result column="CJSJ" jdbcType="VARCHAR" property="cjsj" />
+    <result column="XGR" jdbcType="VARCHAR" property="xgr" />
+    <result column="XGSJ" jdbcType="VARCHAR" property="xgsj" />
+    <result column="YLZD" jdbcType="VARCHAR" property="ylzd" />
+    <result column="ISDEL" jdbcType="VARCHAR" property="isdel" />
+    <result column="HCDZ" jdbcType="VARCHAR" property="hcdz" />
+    <result column="YLZH" jdbcType="VARCHAR" property="ylzh" />
+    <result column="JSZH" jdbcType="VARCHAR" property="jszh" />
+    <result column="ZXWYYZ" jdbcType="VARCHAR" property="zxwyyz" />
+    <result column="SYSZD" jdbcType="VARCHAR" property="syszd" />
+    <result column="KSTZ" jdbcType="VARCHAR" property="kstz" />
+    <result column="TYDB" jdbcType="VARCHAR" property="tydb" />
+    <result column="RXFSM" jdbcType="VARCHAR" property="rxfsm" />
+    <result column="ZSJJM" jdbcType="VARCHAR" property="zsjjm" />
+    <result column="KSLBM" jdbcType="VARCHAR" property="kslbm" />
+    <result column="YYFZDM" jdbcType="VARCHAR" property="yyfzdm" />
+    <result column="CJ" jdbcType="VARCHAR" property="cj" />
+    <result column="TZCJ" jdbcType="VARCHAR" property="tzcj" />
+    <result column="TDCJ" jdbcType="VARCHAR" property="tdcj" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Xs0101ID, XH, XM, XMPY, CYM, XBM, CSRQ, CSDM, JG, MZM, GJDQM, SFZJLXM, SFZJH, SFZJYXQ, 
+    HYZKM, GATQWM, ZZMMM, JKZKM, XYZJM, XXM, ZP, YHZH, TXDZ, YZBM, DH, DZXX, ZYDZ, JSTXH, 
+    BZ, CJR, CJSJ, XGR, XGSJ, YLZD, ISDEL, HCDZ, YLZH, JSZH, ZXWYYZ, SYSZD, KSTZ, TYDB, 
+    RXFSM, ZSJJM, KSLBM, YYFZDM, CJ, TZCJ, TDCJ
+  </sql>
+  <select id="selectByXm" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from Xs0101
+    where Xm = #{xm,jdbcType=VARCHAR} and rownum = 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from Xs0101
+    where Xs0101ID = #{Xs0101id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.kikyc.utils.entity.Xs0101">
+    insert into Xs0101 (Xs0101ID, XH, XM, 
+      XMPY, CYM, XBM, CSRQ, 
+      CSDM, JG, MZM, GJDQM, 
+      SFZJLXM, SFZJH, SFZJYXQ, 
+      HYZKM, GATQWM, ZZMMM, 
+      JKZKM, XYZJM, XXM, 
+      ZP, YHZH, TXDZ, YZBM, 
+      DH, DZXX, ZYDZ, JSTXH, 
+      BZ, CJR, CJSJ, XGR, 
+      XGSJ, YLZD, ISDEL, 
+      HCDZ, YLZH, JSZH, ZXWYYZ, 
+      SYSZD, KSTZ, TYDB, 
+      RXFSM, ZSJJM, KSLBM, 
+      YYFZDM, CJ, TZCJ, TDCJ
+      )
+    values (#{Xs0101id,jdbcType=VARCHAR}, #{xh,jdbcType=VARCHAR}, #{xm,jdbcType=VARCHAR}, 
+      #{xmpy,jdbcType=VARCHAR}, #{cym,jdbcType=VARCHAR}, #{xbm,jdbcType=VARCHAR}, #{csrq,jdbcType=VARCHAR}, 
+      #{csdm,jdbcType=VARCHAR}, #{jg,jdbcType=VARCHAR}, #{mzm,jdbcType=VARCHAR}, #{gjdqm,jdbcType=VARCHAR}, 
+      #{sfzjlxm,jdbcType=VARCHAR}, #{sfzjh,jdbcType=VARCHAR}, #{sfzjyxq,jdbcType=VARCHAR}, 
+      #{hyzkm,jdbcType=VARCHAR}, #{gatqwm,jdbcType=VARCHAR}, #{zzmmm,jdbcType=VARCHAR}, 
+      #{jkzkm,jdbcType=VARCHAR}, #{xyzjm,jdbcType=VARCHAR}, #{xxm,jdbcType=VARCHAR}, 
+      #{zp,jdbcType=VARCHAR}, #{yhzh,jdbcType=VARCHAR}, #{txdz,jdbcType=VARCHAR}, #{yzbm,jdbcType=VARCHAR}, 
+      #{dh,jdbcType=VARCHAR}, #{dzxx,jdbcType=VARCHAR}, #{zydz,jdbcType=VARCHAR}, #{jstxh,jdbcType=VARCHAR}, 
+      #{bz,jdbcType=VARCHAR}, #{cjr,jdbcType=VARCHAR}, #{cjsj,jdbcType=VARCHAR}, #{xgr,jdbcType=VARCHAR}, 
+      #{xgsj,jdbcType=VARCHAR}, #{ylzd,jdbcType=VARCHAR}, #{isdel,jdbcType=VARCHAR}, 
+      #{hcdz,jdbcType=VARCHAR}, #{ylzh,jdbcType=VARCHAR}, #{jszh,jdbcType=VARCHAR}, #{zxwyyz,jdbcType=VARCHAR}, 
+      #{syszd,jdbcType=VARCHAR}, #{kstz,jdbcType=VARCHAR}, #{tydb,jdbcType=VARCHAR}, 
+      #{rxfsm,jdbcType=VARCHAR}, #{zsjjm,jdbcType=VARCHAR}, #{kslbm,jdbcType=VARCHAR}, 
+      #{yyfzdm,jdbcType=VARCHAR}, #{cj,jdbcType=VARCHAR}, #{tzcj,jdbcType=VARCHAR}, #{tdcj,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.kikyc.utils.entity.Xs0101">
+    insert into Xs0101
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="Xs0101id != null">
+        Xs0101ID,
+      </if>
+      <if test="xh != null">
+        XH,
+      </if>
+      <if test="xm != null">
+        XM,
+      </if>
+      <if test="xmpy != null">
+        XMPY,
+      </if>
+      <if test="cym != null">
+        CYM,
+      </if>
+      <if test="xbm != null">
+        XBM,
+      </if>
+      <if test="csrq != null">
+        CSRQ,
+      </if>
+      <if test="csdm != null">
+        CSDM,
+      </if>
+      <if test="jg != null">
+        JG,
+      </if>
+      <if test="mzm != null">
+        MZM,
+      </if>
+      <if test="gjdqm != null">
+        GJDQM,
+      </if>
+      <if test="sfzjlxm != null">
+        SFZJLXM,
+      </if>
+      <if test="sfzjh != null">
+        SFZJH,
+      </if>
+      <if test="sfzjyxq != null">
+        SFZJYXQ,
+      </if>
+      <if test="hyzkm != null">
+        HYZKM,
+      </if>
+      <if test="gatqwm != null">
+        GATQWM,
+      </if>
+      <if test="zzmmm != null">
+        ZZMMM,
+      </if>
+      <if test="jkzkm != null">
+        JKZKM,
+      </if>
+      <if test="xyzjm != null">
+        XYZJM,
+      </if>
+      <if test="xxm != null">
+        XXM,
+      </if>
+      <if test="zp != null">
+        ZP,
+      </if>
+      <if test="yhzh != null">
+        YHZH,
+      </if>
+      <if test="txdz != null">
+        TXDZ,
+      </if>
+      <if test="yzbm != null">
+        YZBM,
+      </if>
+      <if test="dh != null">
+        DH,
+      </if>
+      <if test="dzxx != null">
+        DZXX,
+      </if>
+      <if test="zydz != null">
+        ZYDZ,
+      </if>
+      <if test="jstxh != null">
+        JSTXH,
+      </if>
+      <if test="bz != null">
+        BZ,
+      </if>
+      <if test="cjr != null">
+        CJR,
+      </if>
+      <if test="cjsj != null">
+        CJSJ,
+      </if>
+      <if test="xgr != null">
+        XGR,
+      </if>
+      <if test="xgsj != null">
+        XGSJ,
+      </if>
+      <if test="ylzd != null">
+        YLZD,
+      </if>
+      <if test="isdel != null">
+        ISDEL,
+      </if>
+      <if test="hcdz != null">
+        HCDZ,
+      </if>
+      <if test="ylzh != null">
+        YLZH,
+      </if>
+      <if test="jszh != null">
+        JSZH,
+      </if>
+      <if test="zxwyyz != null">
+        ZXWYYZ,
+      </if>
+      <if test="syszd != null">
+        SYSZD,
+      </if>
+      <if test="kstz != null">
+        KSTZ,
+      </if>
+      <if test="tydb != null">
+        TYDB,
+      </if>
+      <if test="rxfsm != null">
+        RXFSM,
+      </if>
+      <if test="zsjjm != null">
+        ZSJJM,
+      </if>
+      <if test="kslbm != null">
+        KSLBM,
+      </if>
+      <if test="yyfzdm != null">
+        YYFZDM,
+      </if>
+      <if test="cj != null">
+        CJ,
+      </if>
+      <if test="tzcj != null">
+        TZCJ,
+      </if>
+      <if test="tdcj != null">
+        TDCJ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="Xs0101id != null">
+        #{Xs0101id,jdbcType=VARCHAR},
+      </if>
+      <if test="xh != null">
+        #{xh,jdbcType=VARCHAR},
+      </if>
+      <if test="xm != null">
+        #{xm,jdbcType=VARCHAR},
+      </if>
+      <if test="xmpy != null">
+        #{xmpy,jdbcType=VARCHAR},
+      </if>
+      <if test="cym != null">
+        #{cym,jdbcType=VARCHAR},
+      </if>
+      <if test="xbm != null">
+        #{xbm,jdbcType=VARCHAR},
+      </if>
+      <if test="csrq != null">
+        #{csrq,jdbcType=VARCHAR},
+      </if>
+      <if test="csdm != null">
+        #{csdm,jdbcType=VARCHAR},
+      </if>
+      <if test="jg != null">
+        #{jg,jdbcType=VARCHAR},
+      </if>
+      <if test="mzm != null">
+        #{mzm,jdbcType=VARCHAR},
+      </if>
+      <if test="gjdqm != null">
+        #{gjdqm,jdbcType=VARCHAR},
+      </if>
+      <if test="sfzjlxm != null">
+        #{sfzjlxm,jdbcType=VARCHAR},
+      </if>
+      <if test="sfzjh != null">
+        #{sfzjh,jdbcType=VARCHAR},
+      </if>
+      <if test="sfzjyxq != null">
+        #{sfzjyxq,jdbcType=VARCHAR},
+      </if>
+      <if test="hyzkm != null">
+        #{hyzkm,jdbcType=VARCHAR},
+      </if>
+      <if test="gatqwm != null">
+        #{gatqwm,jdbcType=VARCHAR},
+      </if>
+      <if test="zzmmm != null">
+        #{zzmmm,jdbcType=VARCHAR},
+      </if>
+      <if test="jkzkm != null">
+        #{jkzkm,jdbcType=VARCHAR},
+      </if>
+      <if test="xyzjm != null">
+        #{xyzjm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxm != null">
+        #{xxm,jdbcType=VARCHAR},
+      </if>
+      <if test="zp != null">
+        #{zp,jdbcType=VARCHAR},
+      </if>
+      <if test="yhzh != null">
+        #{yhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="txdz != null">
+        #{txdz,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null">
+        #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="dh != null">
+        #{dh,jdbcType=VARCHAR},
+      </if>
+      <if test="dzxx != null">
+        #{dzxx,jdbcType=VARCHAR},
+      </if>
+      <if test="zydz != null">
+        #{zydz,jdbcType=VARCHAR},
+      </if>
+      <if test="jstxh != null">
+        #{jstxh,jdbcType=VARCHAR},
+      </if>
+      <if test="bz != null">
+        #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="cjr != null">
+        #{cjr,jdbcType=VARCHAR},
+      </if>
+      <if test="cjsj != null">
+        #{cjsj,jdbcType=VARCHAR},
+      </if>
+      <if test="xgr != null">
+        #{xgr,jdbcType=VARCHAR},
+      </if>
+      <if test="xgsj != null">
+        #{xgsj,jdbcType=VARCHAR},
+      </if>
+      <if test="ylzd != null">
+        #{ylzd,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null">
+        #{isdel,jdbcType=VARCHAR},
+      </if>
+      <if test="hcdz != null">
+        #{hcdz,jdbcType=VARCHAR},
+      </if>
+      <if test="ylzh != null">
+        #{ylzh,jdbcType=VARCHAR},
+      </if>
+      <if test="jszh != null">
+        #{jszh,jdbcType=VARCHAR},
+      </if>
+      <if test="zxwyyz != null">
+        #{zxwyyz,jdbcType=VARCHAR},
+      </if>
+      <if test="syszd != null">
+        #{syszd,jdbcType=VARCHAR},
+      </if>
+      <if test="kstz != null">
+        #{kstz,jdbcType=VARCHAR},
+      </if>
+      <if test="tydb != null">
+        #{tydb,jdbcType=VARCHAR},
+      </if>
+      <if test="rxfsm != null">
+        #{rxfsm,jdbcType=VARCHAR},
+      </if>
+      <if test="zsjjm != null">
+        #{zsjjm,jdbcType=VARCHAR},
+      </if>
+      <if test="kslbm != null">
+        #{kslbm,jdbcType=VARCHAR},
+      </if>
+      <if test="yyfzdm != null">
+        #{yyfzdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cj != null">
+        #{cj,jdbcType=VARCHAR},
+      </if>
+      <if test="tzcj != null">
+        #{tzcj,jdbcType=VARCHAR},
+      </if>
+      <if test="tdcj != null">
+        #{tdcj,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kikyc.utils.entity.Xs0101">
+    update Xs0101
+    <set>
+      <if test="xh != null">
+        XH = #{xh,jdbcType=VARCHAR},
+      </if>
+      <if test="xm != null">
+        XM = #{xm,jdbcType=VARCHAR},
+      </if>
+      <if test="xmpy != null">
+        XMPY = #{xmpy,jdbcType=VARCHAR},
+      </if>
+      <if test="cym != null">
+        CYM = #{cym,jdbcType=VARCHAR},
+      </if>
+      <if test="xbm != null">
+        XBM = #{xbm,jdbcType=VARCHAR},
+      </if>
+      <if test="csrq != null">
+        CSRQ = #{csrq,jdbcType=VARCHAR},
+      </if>
+      <if test="csdm != null">
+        CSDM = #{csdm,jdbcType=VARCHAR},
+      </if>
+      <if test="jg != null">
+        JG = #{jg,jdbcType=VARCHAR},
+      </if>
+      <if test="mzm != null">
+        MZM = #{mzm,jdbcType=VARCHAR},
+      </if>
+      <if test="gjdqm != null">
+        GJDQM = #{gjdqm,jdbcType=VARCHAR},
+      </if>
+      <if test="sfzjlxm != null">
+        SFZJLXM = #{sfzjlxm,jdbcType=VARCHAR},
+      </if>
+      <if test="sfzjh != null">
+        SFZJH = #{sfzjh,jdbcType=VARCHAR},
+      </if>
+      <if test="sfzjyxq != null">
+        SFZJYXQ = #{sfzjyxq,jdbcType=VARCHAR},
+      </if>
+      <if test="hyzkm != null">
+        HYZKM = #{hyzkm,jdbcType=VARCHAR},
+      </if>
+      <if test="gatqwm != null">
+        GATQWM = #{gatqwm,jdbcType=VARCHAR},
+      </if>
+      <if test="zzmmm != null">
+        ZZMMM = #{zzmmm,jdbcType=VARCHAR},
+      </if>
+      <if test="jkzkm != null">
+        JKZKM = #{jkzkm,jdbcType=VARCHAR},
+      </if>
+      <if test="xyzjm != null">
+        XYZJM = #{xyzjm,jdbcType=VARCHAR},
+      </if>
+      <if test="xxm != null">
+        XXM = #{xxm,jdbcType=VARCHAR},
+      </if>
+      <if test="zp != null">
+        ZP = #{zp,jdbcType=VARCHAR},
+      </if>
+      <if test="yhzh != null">
+        YHZH = #{yhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="txdz != null">
+        TXDZ = #{txdz,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null">
+        YZBM = #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="dh != null">
+        DH = #{dh,jdbcType=VARCHAR},
+      </if>
+      <if test="dzxx != null">
+        DZXX = #{dzxx,jdbcType=VARCHAR},
+      </if>
+      <if test="zydz != null">
+        ZYDZ = #{zydz,jdbcType=VARCHAR},
+      </if>
+      <if test="jstxh != null">
+        JSTXH = #{jstxh,jdbcType=VARCHAR},
+      </if>
+      <if test="bz != null">
+        BZ = #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="cjr != null">
+        CJR = #{cjr,jdbcType=VARCHAR},
+      </if>
+      <if test="cjsj != null">
+        CJSJ = #{cjsj,jdbcType=VARCHAR},
+      </if>
+      <if test="xgr != null">
+        XGR = #{xgr,jdbcType=VARCHAR},
+      </if>
+      <if test="xgsj != null">
+        XGSJ = #{xgsj,jdbcType=VARCHAR},
+      </if>
+      <if test="ylzd != null">
+        YLZD = #{ylzd,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null">
+        ISDEL = #{isdel,jdbcType=VARCHAR},
+      </if>
+      <if test="hcdz != null">
+        HCDZ = #{hcdz,jdbcType=VARCHAR},
+      </if>
+      <if test="ylzh != null">
+        YLZH = #{ylzh,jdbcType=VARCHAR},
+      </if>
+      <if test="jszh != null">
+        JSZH = #{jszh,jdbcType=VARCHAR},
+      </if>
+      <if test="zxwyyz != null">
+        ZXWYYZ = #{zxwyyz,jdbcType=VARCHAR},
+      </if>
+      <if test="syszd != null">
+        SYSZD = #{syszd,jdbcType=VARCHAR},
+      </if>
+      <if test="kstz != null">
+        KSTZ = #{kstz,jdbcType=VARCHAR},
+      </if>
+      <if test="tydb != null">
+        TYDB = #{tydb,jdbcType=VARCHAR},
+      </if>
+      <if test="rxfsm != null">
+        RXFSM = #{rxfsm,jdbcType=VARCHAR},
+      </if>
+      <if test="zsjjm != null">
+        ZSJJM = #{zsjjm,jdbcType=VARCHAR},
+      </if>
+      <if test="kslbm != null">
+        KSLBM = #{kslbm,jdbcType=VARCHAR},
+      </if>
+      <if test="yyfzdm != null">
+        YYFZDM = #{yyfzdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cj != null">
+        CJ = #{cj,jdbcType=VARCHAR},
+      </if>
+      <if test="tzcj != null">
+        TZCJ = #{tzcj,jdbcType=VARCHAR},
+      </if>
+      <if test="tdcj != null">
+        TDCJ = #{tdcj,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Xs0101ID = #{Xs0101id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kikyc.utils.entity.Xs0101">
+    update Xs0101
+    set XH = #{xh,jdbcType=VARCHAR},
+      XM = #{xm,jdbcType=VARCHAR},
+      XMPY = #{xmpy,jdbcType=VARCHAR},
+      CYM = #{cym,jdbcType=VARCHAR},
+      XBM = #{xbm,jdbcType=VARCHAR},
+      CSRQ = #{csrq,jdbcType=VARCHAR},
+      CSDM = #{csdm,jdbcType=VARCHAR},
+      JG = #{jg,jdbcType=VARCHAR},
+      MZM = #{mzm,jdbcType=VARCHAR},
+      GJDQM = #{gjdqm,jdbcType=VARCHAR},
+      SFZJLXM = #{sfzjlxm,jdbcType=VARCHAR},
+      SFZJH = #{sfzjh,jdbcType=VARCHAR},
+      SFZJYXQ = #{sfzjyxq,jdbcType=VARCHAR},
+      HYZKM = #{hyzkm,jdbcType=VARCHAR},
+      GATQWM = #{gatqwm,jdbcType=VARCHAR},
+      ZZMMM = #{zzmmm,jdbcType=VARCHAR},
+      JKZKM = #{jkzkm,jdbcType=VARCHAR},
+      XYZJM = #{xyzjm,jdbcType=VARCHAR},
+      XXM = #{xxm,jdbcType=VARCHAR},
+      ZP = #{zp,jdbcType=VARCHAR},
+      YHZH = #{yhzh,jdbcType=VARCHAR},
+      TXDZ = #{txdz,jdbcType=VARCHAR},
+      YZBM = #{yzbm,jdbcType=VARCHAR},
+      DH = #{dh,jdbcType=VARCHAR},
+      DZXX = #{dzxx,jdbcType=VARCHAR},
+      ZYDZ = #{zydz,jdbcType=VARCHAR},
+      JSTXH = #{jstxh,jdbcType=VARCHAR},
+      BZ = #{bz,jdbcType=VARCHAR},
+      CJR = #{cjr,jdbcType=VARCHAR},
+      CJSJ = #{cjsj,jdbcType=VARCHAR},
+      XGR = #{xgr,jdbcType=VARCHAR},
+      XGSJ = #{xgsj,jdbcType=VARCHAR},
+      YLZD = #{ylzd,jdbcType=VARCHAR},
+      ISDEL = #{isdel,jdbcType=VARCHAR},
+      HCDZ = #{hcdz,jdbcType=VARCHAR},
+      YLZH = #{ylzh,jdbcType=VARCHAR},
+      JSZH = #{jszh,jdbcType=VARCHAR},
+      ZXWYYZ = #{zxwyyz,jdbcType=VARCHAR},
+      SYSZD = #{syszd,jdbcType=VARCHAR},
+      KSTZ = #{kstz,jdbcType=VARCHAR},
+      TYDB = #{tydb,jdbcType=VARCHAR},
+      RXFSM = #{rxfsm,jdbcType=VARCHAR},
+      ZSJJM = #{zsjjm,jdbcType=VARCHAR},
+      KSLBM = #{kslbm,jdbcType=VARCHAR},
+      YYFZDM = #{yyfzdm,jdbcType=VARCHAR},
+      CJ = #{cj,jdbcType=VARCHAR},
+      TZCJ = #{tzcj,jdbcType=VARCHAR},
+      TDCJ = #{tdcj,jdbcType=VARCHAR}
+    where Xs0101ID = #{Xs0101id,jdbcType=VARCHAR}
+  </update>
+</mapper>
