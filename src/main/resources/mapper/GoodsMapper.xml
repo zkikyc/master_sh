@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sh.springbootdemo.dao.GoodsDao">
+    <select id="getMoney" resultType="java.lang.Double" parameterType="java.lang.String">
+       select price from goods where id = #{id}
+    </select>
+    <update id="sellGoods">
+begin
+        update goods set repertory  = repertory - #{size} where id = #{id};
+        <choose>
+        <when test="userId=null" >
+            update Users set money = money - (select price*#{size} from goods where id = #{id}) where id = #{userId};
+        </when>
+        </choose>
+end;
+    </update>
+</mapper>
