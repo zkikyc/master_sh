@@ -1,0 +1,74 @@
+<style>
+    #matrix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.8;
+        height: 100%;
+        width: 100%;
+    }
+
+    #live2dcanvas {
+        border: 0 !important;
+        right: 0;
+    }
+</style>
+<html>
+<body>
+<canvas id="matrix"></canvas>
+</body>
+</html>
+<script type="text/javascript">
+    //监听窗口变化重新赋值长宽
+    window.onresize=function(){
+        matrix.height = window.innerHeight;
+        matrix.width = window.innerWidth;
+    }
+    //文字
+    var txts = "廾匸";
+    //var txts = "戴水仙♥";
+    //转为数组
+    txts = txts.split("");
+    var matrix = document.getElementById("matrix");
+    var context = matrix.getContext("2d");
+    //窗口大小
+    matrix.height = window.innerHeight;
+    matrix.width = window.innerWidth;
+    //屏幕分辨率
+    //matrix.height = window.screen.height;
+    //matrix.width = window.screen.width;
+    var drop = [];
+    var font_size = 16;
+    var columns = matrix.width / font_size;
+    for (var i = 0; i < columns; i++)
+        drop[i] = 1;
+
+    function drawMatrix() {
+
+        context.fillStyle = "rgba(250,235,215,0.09)";
+        context.fillRect(0, 0, matrix.width, matrix.height);
+
+
+        context.fillStyle = "#FFB6C1";
+        context.font = font_size + "px";
+        for (var i = 0; i < columns; i++) {
+            //随机取要输出的文字
+            var text = txts[Math.floor(Math.random() * txts.length)];
+            //输出文字，注意坐标的计算
+            context.fillText(text, i * font_size, drop[i] * font_size);/*get 0 and 1*/
+
+            if (drop[i] * font_size > (matrix.height * 2 / 3) && Math.random() > 0.95)/*reset*/
+                drop[i] = 0;
+            drop[i]++;
+        }
+    }
+
+    setInterval(drawMatrix, 100);
+</script>
+<script type="application/javascript" src="js/fireworks.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+    L2Dwidget.init();
+
+</script>
