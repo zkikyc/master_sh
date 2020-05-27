@@ -2,7 +2,7 @@ package com.kikyc.utils.aspect;
 
 import com.alibaba.fastjson.JSONObject;
 import com.kikyc.utils.controller.Xs0101Controller;
-import com.kikyc.utils.entity.ResultVO;
+import com.kikyc.utils.entity.R;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
@@ -79,12 +79,12 @@ public class LogAspect {
     /**
      * 方法执行后
      *
-     * @param resultVO
+     * @param r
      * @throws Exception
      */
-    @AfterReturning(returning = "resultVO", pointcut = "controllerMethod()")
-    public void logResultVOInfo(ResultVO resultVO) throws Exception {
-        log.info("请求结果：" + resultVO.getCode() + "\t" + resultVO.getMsg());
+    @AfterReturning(returning = "r", pointcut = "controllerMethod()")
+    public void logResultVOInfo(R r) throws Exception {
+        log.info("请求结果：" + r.getCode() + "\t" + r.getMsg());
     }
 
 

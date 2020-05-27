@@ -7,67 +7,67 @@ package com.kikyc.utils.entity;
  * @param <T> 类型
  */
 
-public class ResultVO<T> {
+public class R<T> {
 
     private Integer code;
     private String msg;
     private T data;
 
-    public ResultVO(Integer code, String msg) {
+    public R(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    public ResultVO(Integer code, String msg, T data) {
+    public R(Integer code, String msg, T data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
     /**
-     * 请求成功  状态码 1
+     * 请求成功  状态码 200
      *
      * @param msg 返回信息
      * @param <T> 类型
      * @return ResultVO
      */
-    public static <T> ResultVO getSuccess(String msg) {
-        return new ResultVO(1, msg);
+    public static <T> R getSuccess(String msg) {
+        return new R(200, msg);
     }
 
     /**
-     * 请求成功  状态码 1
+     * 请求成功  状态码 200
      *
      * @param msg  返回信息
      * @param data 返回对象
      * @param <T>  类型
-     * @return ResultVO
+     * @return R
      */
-    public static <T> ResultVO getSuccess(String msg, T data) {
-        return new ResultVO(1, msg, data);
+    public static <T> R getSuccess(String msg, T data) {
+        return new R(200, msg, data);
     }
 
     /**
-     * 请求失败   状态码 0
+     * 请求失败   状态码 500
      *
      * @param msg 返回信息
      * @param <T> 类型
-     * @return ResultVO
+     * @return R
      */
-    public static <T> ResultVO getFailed(String msg) {
-        return new ResultVO(0, msg);
+    public static <T> R getFailed(String msg) {
+        return new R(500, msg);
     }
 
     /**
-     * 请求失败  状态 0
+     * 请求失败  状态 500
      *
      * @param msg  返回信息
      * @param data 返回数据
      * @param <T>  类型
-     * @return ResultVO
+     * @return R
      */
-    public static <T> ResultVO getFailed(String msg, T data) {
-        return new ResultVO(0, msg, data);
+    public static <T> R getFailed(String msg, T data) {
+        return new R(500, msg, data);
     }
 
 

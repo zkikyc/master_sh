@@ -12,8 +12,8 @@ spring:
     cache: false
   datasource:
     url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
-    username: zndx
-    password: zndx
+    username: zjd
+    password: Cpic12345
     driver-class-name: oracle.jdbc.driver.OracleDriver
   redis:
     database: 0
