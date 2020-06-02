@@ -1,5 +1,6 @@
 package com.kikyc.utils.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,4 +17,14 @@ public class DateUtils {
         String dateString = formatter.format(date);
         return dateString;
     }
+
+    public static Date StringToDate(String time, String format){
+        SimpleDateFormat formatter = new SimpleDateFormat(format);
+        try {
+            return formatter.parse(time);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
+
 }
